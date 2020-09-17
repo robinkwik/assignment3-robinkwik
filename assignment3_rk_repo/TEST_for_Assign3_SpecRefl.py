@@ -4,6 +4,8 @@ Created on Wed Sep 16 18:54:04 2020
 
 @author: robin
 """
+# Before executing, ensure that working directory is set to desired folder containing all test files from repository.
+
 from Assign3_SpecRefl import ASDSpectralReflectance
 
 asdpoint1 = '2 3 4 5 6'     # Used for testing. Represents columns from the CSV which correspond to measurements taken at sample point 1.
