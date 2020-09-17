@@ -65,11 +65,31 @@ def ndviSpectralReflectance(fileName):
     refl2_test_2 = refl2_test.mean(axis=1)
     point2_reflectance = (row_avg_2)/(refl2_test_2)
     
+    wavelength = df.iloc[:, 0]
+    
+    # OUTPUT TO EXCEL FILE
+    # https://stackoverflow.com/questions/13437727/writing-to-an-excel-spreadsheet
+    #excel_filename = input('Enter file name to save to (.xlsx): ')
+    excel_filename = 'spectralReflectance.xlsx'
+    sheetName = 'reflectance'
+    reflectance_df = pd.DataFrame({'Wavelength (nm)': wavelength, 'Point 1 reflectance': point1_reflectance, 'Point 2 reflectance': point2_reflectance})
+    reflectance_df.to_excel(excel_filename, sheet_name= sheetName, index=False)
+    
+    file_path = os.path.dirname(os.path.realpath(excel_filename))
+    print("Output NDVI file", excel_filename, " has been saved to: ", file_path)
+    
+    
+def specReflPlot(excel_file):
+    import pandas as pd
+    import os
+    import matplotlib
+    
+    plot_data = pd.read_excel(excel_file, sheet_name='reflectance')
     
     # Plot spectral reflectance (y-axis) vs wavelength in nm (x-axis)
-    list_p1_refl = list(point1_reflectance)
-    list_p2_refl = list(point2_reflectance)
-    wavelength = df.iloc[:, 0]
+    list_p1_refl = plot_data.iloc[:, 1]
+    list_p2_refl = plot_data.iloc[:, 2]
+    wavelength = plot_data.iloc[:, 0]
     
     plot_df = pd.DataFrame({
     "wavelength (nm)": wavelength,
@@ -79,16 +99,3 @@ def ndviSpectralReflectance(fileName):
     
     plot_df.plot.line(x="wavelength (nm)", y="reflectance point 1")
     plot_df.plot.line(x="wavelength (nm)", y="reflectance point 2")
-
-    
-    
-    # OUTPUT TO EXCEL FILE
-    # https://stackoverflow.com/questions/13437727/writing-to-an-excel-spreadsheet
-    excel_filename = input('Enter file name to save to (.xlsx): ')
-    sheetName = input('Enter sheet name for .xlsx file: ')
-    reflectance_df = pd.DataFrame({'Point 1 reflectance': point1_reflectance, 'Point 2 reflectance': point2_reflectance})
-    reflectance_df.to_excel(excel_filename, sheet_name= sheetName, index=False)
-    
-    file_path = os.path.dirname(os.path.realpath(excel_filename))
-    print("Output NDVI file", excel_filename, " has been saved to: ", file_path)
-    
