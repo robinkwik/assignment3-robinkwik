@@ -5,9 +5,9 @@ Created on Wed Sep 16 18:48:00 2020
 @author: robin
 """
 
-" Spectral Reflectance Calculation from Raw DN (TXT --> EXCEL File) "
 
-def ASDSpectralReflectance(fileName):
+
+def ASDSpectralReflectance(fileName, sp1cols, sp2cols, wb):
     import pandas as pd
     import os
     
@@ -24,28 +24,24 @@ def ASDSpectralReflectance(fileName):
             break
         
     col_index = [f"{c[0]}:{c[1]}" for c in enumerate(df.columns)]   # Obtains index of column header values, uses list comprehension inspired by: https://pbpython.com/selecting-columns.html. 
-    print(col_index)    # Prints column index for use in identifying correct columns for each sample point.
-
-    point_01_cols = input("Enter the column index numbers for sample point 1 (with a space between each column #): ")   # This identifies the columns with data for each sample point (identified through col_index)
-    w1_01_cols = list(point_01_cols.split())    # Splits the input column values by the spaces between them and inputs into a list.
-    point1 = [int(i) for i in w1_01_cols]       # This gives the integer version of the sample point string list.
+    # Use col_index when inputting ASD data from scratch and specifying columns for each point.
     
+    w1_01_cols = list(sp1cols.split())    # Splits the input column values by the spaces between them and inputs into a list.
+    point1 = [int(i) for i in w1_01_cols]       # This gives the integer version of the sample point string list.
     w1_01 = df.iloc[:, point1]  # Locate columns specified in the point 1 list and assign them to a variable.
     col_avg_1 = w1_01.mean(axis=1)  # Calculates the average of the sample point columns.
-    refl1 = input("Specify column # representing whiteboard reflectance for point 1: ") # Represents which column data corresponds to the whiteboard measurement.
-    refl1 = list(refl1)
+    refl1 = list(wb)
     refl1 = [int(i) for i in refl1]       # Convert list to integer values.
     refl1_test = df.iloc[:, refl1]
     refl1_test_2 = refl1_test.mean(axis=1)  # Locate white board reference values and calculate mean.
     point1_reflectance = (col_avg_1)/(refl1_test_2)     # Calculate spectral reflectance for point 1 (average of columns for point 1 / whiteboard reflectance values)
     
-    w1_02_cols = input("Enter the column index numbers for sample point 2 (with a space between each column #): ")
-    w1_02_cols = list(w1_02_cols.split())
+    # This portion below repeats the above code, but for point 2.
+    w1_02_cols = list(sp2cols.split())
     point2 = [int(i) for i in w1_02_cols]
     w1_02 = df.iloc[:, point2]
     col_avg_2 = w1_02.mean(axis=1)
-    refl2 = input("Specify column # representing whiteboard reflectance for point 2: ")
-    refl2 = list(refl2)
+    refl2 = list(wb)
     refl2 = [int(i) for i in refl2] 
     refl2_test = df.iloc[:, refl2]
     refl2_test_2 = refl2_test.mean(axis=1)
