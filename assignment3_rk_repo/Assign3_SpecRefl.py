@@ -97,5 +97,9 @@ def specReflPlot(excel_file):
     "reflectance point 2": list_p2_refl
 })
     
-    plot_df.plot.line(x="wavelength (nm)", y="reflectance point 1")
-    plot_df.plot.line(x="wavelength (nm)", y="reflectance point 2")
+    specrefl1 = plot_df.plot.line(x="wavelength (nm)", y="reflectance point 1", title = 'Spectral Reflectance of Wheat (Point 1)', colormap = 'viridis')
+    specrefl2 = plot_df.plot.line(x="wavelength (nm)", y="reflectance point 2", title = 'Spectral Reflectance of Wheat (Point 2)', colormap = 'viridis')
+    specrefl1.set_ylabel("Spectral Reflectance")
+    specrefl2.set_ylabel("Spectral Reflectance")
+    specrefl1.set_xlabel("Wavelength (nm)")
+    specrefl2.set_xlabel("Wavelength (nm)")
