@@ -17,4 +17,4 @@ Data was collected on May 27, 2020 in a field West of London, ON. Field work was
 ![ASD](https://github.com/robinkwik/NDVI/blob/master/ASD.JPG)
 
 
-Figure 1: Collection of spectral reflectance using an ASD (FieldSpecPro) in a Corn field (2020).
+Figure 1: Collection of spectral reflectance using an ASD (FieldSpecPro) in a Corn field South of London, ON (2020).
