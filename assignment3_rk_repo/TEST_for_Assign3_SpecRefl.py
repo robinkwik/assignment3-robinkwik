@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Sep 16 18:54:04 2020
-
-@author: robin
+For use in testing Assign3_SpecRefl.py program.
+Warning: Ensure test files are stored in same working directory as Assign3_SpecRefl.py for program to function properly.
 """
 # Before executing, ensure that working directory is set to desired folder containing all test files from repository.
 
