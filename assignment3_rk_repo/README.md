@@ -9,7 +9,11 @@
 
 *plot1_example.png* is an image file showing an example of how the output plot for sample point 1 should appear.
 
+![plot1](plot1_example.png)
+
 *plot2_example.png* is an image file showing an example of how the output plot for sample point 2 should appear.
+
+![plot2](plot2_example.png)
 
 ## Data Source:
 Data was collected on May 27, 2020 in a field West of London, ON. Field work was performed in correspondence with UWO and A&L Laboratories.
