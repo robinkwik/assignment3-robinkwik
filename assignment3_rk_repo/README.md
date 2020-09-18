@@ -1,6 +1,6 @@
 # README document for Assignment 3 
 
-## Files in Repository:
+## File Usage:
 *Assign3_SpecRefl.py* calculates the spectral reflectance of winter wheat vegetation from a CSV containing Analytical Spectral Device (ASD) data.
 
 *TEST_for_Assign3_SpecRefl.py* is a file used for testing of Assign3_SpecRefl.py program.
