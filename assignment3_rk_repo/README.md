@@ -22,3 +22,6 @@ Data was collected on May 27, 2020 in a field West of London, ON. Field work was
 
 
 Figure 1: Collection of spectral reflectance using an ASD (FieldSpecPro) in a Corn field South of London, ON (2020).
+
+## General Warnings:
+Ensure test files (*TEST_for_Assign3_SpecRefl.py* AND *Wheat_20200527.csv*) are stored in the same location that the working directory is set to!
