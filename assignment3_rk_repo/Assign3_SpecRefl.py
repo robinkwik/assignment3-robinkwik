@@ -1,15 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 
+Requirements:
+Python language
+Pandas library installed
+
 Usage:
 Program calculates spectral reflectance of winter wheat plants from analytical spectral device (ASD) data.
 
 Inputs:
 For first function,
 1) CSV of ASD data from fieldwork ('Paul_20200527.csv').
+2) String of column numbers for sample points.
+3) String containing white board reference column number.
     
 For second function,
-2) XLSX file from first function output ('spectralReflectance.xlsx').
+1) XLSX file from first function output ('spectralReflectance.xlsx').
     
 Outputs:
 1) Excel file (XLSX) of wavelength (nm), and sample point spectral reflectance.
