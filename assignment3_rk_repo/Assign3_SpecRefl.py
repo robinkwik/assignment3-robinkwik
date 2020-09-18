@@ -24,7 +24,7 @@ Warning:
 Ensure test files are stored in same location as working directory for program to properly execute!
     
 """
-
+# fileName refers to name of input CSV file. sp1cols refers to columns from CSV file which store data corresponding to point 1. sp2cols refers to columns from CSV file which store data corresponding to point 2. wb refers to columns from CSV file which store data corresponding to white board data.
 def ASDSpectralReflectance(fileName, sp1cols, sp2cols, wb):
     import pandas as pd
     import os
