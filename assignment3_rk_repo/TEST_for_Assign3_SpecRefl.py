@@ -11,7 +11,7 @@ asdpoint1 = '2 3 4 5 6'     # Used for testing. Represents columns from the CSV 
 asdpoint2 = '7 8 9 10 11'   # Used for testing. Represents columns from the CSV which correspond to measurements taken at sample point 2.
 wb = '1'                    # Used for testing. Represents column from the CSV which corresponds to measurement taken of white board.
 
-ASDSpectralReflectance('Paul_20200527.csv', asdpoint1, asdpoint2, wb)
+ASDSpectralReflectance('Wheat_20200527.csv', asdpoint1, asdpoint2, wb)
 
 
 from Assign3_SpecRefl import specReflPlot
