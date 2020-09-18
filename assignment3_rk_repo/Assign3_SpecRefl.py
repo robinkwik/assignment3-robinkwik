@@ -76,7 +76,6 @@ def ASDSpectralReflectance(fileName, sp1cols, sp2cols, wb):
     
 def specReflPlot(excel_file):       # Function for plotting spectral reflectance of winter wheat plants. Input it the output excel file from function #1.
     import pandas as pd
-    import os
     
     plot_data = pd.read_excel(excel_file, sheet_name='reflectance')     # Reads excel file.
     
