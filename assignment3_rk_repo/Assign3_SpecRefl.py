@@ -10,7 +10,7 @@ Program calculates spectral reflectance of winter wheat plants from analytical s
 
 Inputs:
 For first function,
-1) CSV of ASD data from fieldwork ('Paul_20200527.csv').
+1) CSV of ASD data from fieldwork ('Wheat_20200527.csv').
 2) String of column numbers for sample points.
 3) String containing white board reference column number.
     
