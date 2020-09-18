@@ -5,3 +5,4 @@
 ## Data Source
 Data was collected on May 27, 2020 in a field West of London, ON. Field work was performed in correspondence with UWO and A&L Laboratories.
 
+![foxdemo](https://github.com/robinkwik/NDVI/blob/master/ASD.JPG)
