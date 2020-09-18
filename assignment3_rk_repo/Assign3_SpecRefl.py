@@ -44,26 +44,26 @@ def ASDSpectralReflectance(fileName, sp1cols, sp2cols, wb):
     col_index = [f"{c[0]}:{c[1]}" for c in enumerate(df.columns)]   # Obtains index of column header values, uses list comprehension inspired by: https://pbpython.com/selecting-columns.html. 
     # Use col_index when inputting ASD data from scratch and specifying columns for each point.
     
-    w1_01_cols = list(sp1cols.split())    # Splits the input column values by the spaces between them and inputs into a list.
-    point1 = [int(i) for i in w1_01_cols]       # This gives the integer version of the sample point string list.
-    w1_01 = df.iloc[:, point1]  # Locate columns specified in the point 1 list and assign them to a variable.
-    col_avg_1 = w1_01.mean(axis=1)  # Calculates the average of the sample point columns.
+    p1_cols = list(sp1cols.split())    # Splits the input column values by the spaces between them and inputs into a list.
+    p1_cols = [int(i) for i in p1_cols]       # This gives the integer version of the sample point string list.
+    p1 = df.iloc[:, p1_cols]  # Locate columns specified in the point 1 list and assign them to a variable.
+    p1_avg = p1.mean(axis=1)  # Calculates the average of the sample point columns.
     refl1 = list(wb)
     refl1 = [int(i) for i in refl1]       # Convert list to integer values.
-    refl1_test = df.iloc[:, refl1]
-    refl1_test_2 = refl1_test.mean(axis=1)  # Locate white board reference values and calculate mean.
-    point1_reflectance = (col_avg_1)/(refl1_test_2)     # Calculate spectral reflectance for point 1 (average of columns for point 1 / whiteboard reflectance values)
+    refl1 = df.iloc[:, refl1]
+    refl1_avg = refl1.mean(axis=1)  # Locate white board reference values and calculate mean.
+    point1_reflectance = (p1_avg)/(refl1_avg)     # Calculate spectral reflectance for point 1 (average of columns for point 1 / whiteboard reflectance values)
     
     # This portion below repeats the above code, but for point 2.
-    w1_02_cols = list(sp2cols.split())
-    point2 = [int(i) for i in w1_02_cols]
-    w1_02 = df.iloc[:, point2]
-    col_avg_2 = w1_02.mean(axis=1)
+    p2_cols = list(sp2cols.split())
+    p2_cols = [int(i) for i in p2_cols]
+    p2 = df.iloc[:, p2_cols]
+    p2_avg = p2.mean(axis=1)
     refl2 = list(wb)
     refl2 = [int(i) for i in refl2] 
-    refl2_test = df.iloc[:, refl2]
-    refl2_test_2 = refl2_test.mean(axis=1)
-    point2_reflectance = (col_avg_2)/(refl2_test_2)
+    refl2 = df.iloc[:, refl2]
+    refl2_avg = refl2.mean(axis=1)
+    point2_reflectance = (p2_avg)/(refl2_avg)
     
     wavelength = df.iloc[:, 0]      # Returns the CSV columns containing wavelength values.
     excel_filename = 'spectralReflectance.xlsx'     # Specifies output XLSX file name.
