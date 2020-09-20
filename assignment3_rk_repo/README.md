@@ -7,6 +7,8 @@
 
 *Wheat_20200527.csv* is a CSV file containing ASD data from May 27, 2020. Is used as the input file for Assign3_SpecRefl.py program.
 
+*spectralReflectance.xlsx* is an Excel file provided as an example of the output for the first function in the Assign3_SpecRefl.py program.
+
 *plot1_example.png* is an image file showing an example of how the output plot for sample point 1 should appear.
 
 ![plot1](plot1_example.png)
